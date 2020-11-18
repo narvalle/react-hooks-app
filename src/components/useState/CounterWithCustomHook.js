@@ -1,4 +1,4 @@
-import useCounter from "../hooks/useCounter";
+import useCounter from '../../hooks/useCounter';
 
 export const CounterWithCustomHook = () => {
   const {
@@ -6,14 +6,18 @@ export const CounterWithCustomHook = () => {
     increment: onIncrement,
     decrement: onDecrement,
     reset: onReset,
-    factor:factorIncrement,
+    factor: factorIncrement,
     onChangeInputValue,
-  } = useCounter({initialState: 1, factorIncrement:2});
+  } = useCounter({ initialState: 1, factorIncrement: 2 });
 
   return (
     <>
       <h1> Counter: {counter}</h1>
-    <input type="number" value={factorIncrement} onChange={onChangeInputValue} />
+      <input
+        type="number"
+        value={factorIncrement}
+        onChange={onChangeInputValue}
+      />
       <hr />
       <button onClick={onIncrement} className="btn btn-primary">
         +{factorIncrement}

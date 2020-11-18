@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 const CounterApp = () => {
   const [state, setState] = useState({
@@ -17,8 +17,7 @@ const CounterApp = () => {
         className="btn btn-primary"
         onClick={() => {
           setState({ ...state, firstCounter: firstCounter + 1 });
-        }}
-      >
+        }}>
         +1
       </button>
     </>
