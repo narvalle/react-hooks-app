@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { Message } from './Message';
 
 export const SimpleForm = () => {
   const [formState, setFormState] = useState({ name: '', email: '' });
   const { name, email } = formState;
 
   useEffect(() => {
-    console.log('form changed');
+    console.log(formState);
   }, [formState]);
 
   const onChangeInput = ({ target }) => {
@@ -35,6 +36,7 @@ export const SimpleForm = () => {
           value={email}
           onChange={onChangeInput}
         />
+        {name === 'coords' && <Message />}
       </div>
     </>
   );
