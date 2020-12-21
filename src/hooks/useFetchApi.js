@@ -8,6 +8,13 @@ export const useFetchApi = (url) => {
   });
 
   useEffect(() => {
+    
+    setState({
+      data: null,
+    loading: true,
+    err: null,
+    });
+
     fetch(url)
       .then((res) => res.json())
       .catch((err) => {

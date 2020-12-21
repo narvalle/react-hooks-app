@@ -3,15 +3,15 @@ import PropTypes from "prop-types";
 import { useSetInputValue } from "./useSetInputValue";
 
 const useCounter = ({ initialState = 0, factorIncrement = 1 }) => {
-  const [state, setState] = useState(initialState);
+  const [counter, setState] = useState(initialState);
   const {inputValue:factor, setInputValue:changeFactor, onChangeInputValue} = useSetInputValue(factorIncrement);
 
   const increment = () => {
-    setState(state + factor);
+    setState(counter + factor);
   };
 
   const decrement = () => {
-    setState(state - factor);
+    setState(counter - factor);
   };
 
   const reset = () => {
@@ -19,7 +19,7 @@ const useCounter = ({ initialState = 0, factorIncrement = 1 }) => {
   };
 
   return {
-    state,
+    counter,
     increment,
     decrement,
     reset,
