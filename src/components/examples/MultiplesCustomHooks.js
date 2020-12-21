@@ -1,5 +1,5 @@
 import React from 'react'
-import { useFetchApi } from '../useEffect/useFetchApi'
+import { useFetchApi } from '../../hooks/useFetchApi'
 
 export const MultiplesCustomHooks = () => {
     const /*{loading, err, data}*/ state = useFetchApi(`https://breakingbadapi.com/api/quotes/1`);
