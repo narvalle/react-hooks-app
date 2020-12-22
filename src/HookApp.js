@@ -1,5 +1,7 @@
-import React from "react";
-import { MultiplesCustomHooks } from "./components/examples/MultiplesCustomHooks";
+import React from 'react';
+import {RealExampleRef} from './components/useRef/RealExampleRef';
+//import { FocusScreen } from './components/useRef/FocusScreen';
+//import { MultiplesCustomHooks } from "./components/examples/MultiplesCustomHooks";
 //import { FormWithCustomHook } from "./components/useEffect/FormWithCustomHook";
 //import { SimpleForm } from "./components/useEffect/SimpleForm";
 //import CounterApp from "./components/CounterApp";
@@ -10,7 +12,7 @@ const HookApp = () => {
     <div className="p-5">
       <h1>HookApp</h1>
       <hr />
-      <MultiplesCustomHooks />
+      <RealExampleRef />
     </div>
   );
 };
