@@ -12,7 +12,7 @@ export const useFetchApi = (url) => {
     return () => {
       isMounted.current = false;
     };
-  },[]);
+  }, []);
 
   useEffect(() => {
     setState({
