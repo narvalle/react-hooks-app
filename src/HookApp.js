@@ -1,5 +1,6 @@
 import React from 'react';
-import {Layout} from './components/useLayoutEffect/Layout'
+import {MemoHook} from './components/memos/MemoHook';
+//import {Layout} from './components/useLayoutEffect/Layout'
 //import { RealExampleRef } from './components/useRef/RealExampleRef';
 //import { FocusScreen } from './components/useRef/FocusScreen';
 //import { MultiplesCustomHooks } from "./components/examples/MultiplesCustomHooks";
@@ -13,7 +14,7 @@ const HookApp = () => {
     <div className="p-5">
       <h1>HookApp</h1>
       <hr />
-      <Layout />
+      <MemoHook />
     </div>
   );
 };
