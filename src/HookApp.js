@@ -1,5 +1,7 @@
 import React from 'react';
-import {MemoHook} from './components/memos/MemoHook';
+// import {MemoHook} from './components/memos/MemoHook';
+import {CallbackHook} from './components/memos/CallbackHook';
+// import { Father } from './components/tarea_memo/Father';
 //import {Layout} from './components/useLayoutEffect/Layout'
 //import { RealExampleRef } from './components/useRef/RealExampleRef';
 //import { FocusScreen } from './components/useRef/FocusScreen';
@@ -14,7 +16,7 @@ const HookApp = () => {
     <div className="p-5">
       <h1>HookApp</h1>
       <hr />
-      <MemoHook />
+      <CallbackHook />
     </div>
   );
 };

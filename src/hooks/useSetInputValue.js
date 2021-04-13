@@ -1,21 +1,24 @@
-import {useState} from 'react'
+import { useState, useCallback } from 'react';
 
-export const useSetInputValue = (value=0) => {
-    const [inputValue, setInputValue] = useState(value);
+export const useSetInputValue = (value = 0) => {
+  const [inputValue, setInputValue] = useState(value);
 
+  console.log('Generated useSetInputValue');
 
-    const onChangeInputValue = ({target})=>{
-        const value = parseInt(target.value);
-        if(value > 1 ){
-            setInputValue(value);
-        }else{
-            setInputValue(1);
-        }
+  const onChangeInputValue = useCallback(
+    (value) => {
+      if (value > 1) {
+        setInputValue(value);
+      } else {
+        setInputValue(1);
       }
+    },
+    [setInputValue],
+  );
 
-    return {
-        inputValue,
-        setInputValue,
-        onChangeInputValue,
-    };
+  return {
+    inputValue,
+    setInputValue,
+    onChangeInputValue,
+  };
 };

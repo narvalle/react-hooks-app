@@ -13,18 +13,18 @@ export const MultiplesCustomHooks = () => {
   const { author, quote } = !!data && data[0];
 
   return (
-    <div className="m-3">
+    <div className='m-3'>
       <h1>BreakingBad Quotes</h1>
       <hr />
       {loading ? (
-        <div className="alert alert-info text-center">Loading . . . . . .</div>
+        <div className='alert alert-info text-center'>Loading . . . . . .</div>
       ) : (
-        <blockquote className="blockquote text-right">
-          <p className="mb-0"> {author} </p>
-          <footer className="blockquote-footer"> {quote} </footer>
+        <blockquote className='blockquote text-right'>
+          <p className='mb-0'> {author} </p>
+          <footer className='blockquote-footer'> {quote} </footer>
         </blockquote>
       )}
-      <button className="btn btn-primary" onClick={incrementCounter}>
+      <button className='btn btn-primary' onClick={incrementCounter}>
         Next quote
       </button>
     </div>

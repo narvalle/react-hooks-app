@@ -1,37 +1,37 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import PropTypes from "prop-types";
-import { useSetInputValue } from "./useSetInputValue";
 
-const useCounter = ({ initialState = 0, factorIncrement = 1 }) => {
-  const [counter, setState] = useState(initialState);
-  const {inputValue:factor, setInputValue:changeFactor, onChangeInputValue} = useSetInputValue(factorIncrement);
+const useCounter = ({ initialState = 0 }) => {
+  const [counter, setCounter] = useState(initialState);
 
-  const increment = () => {
-    setState(counter + factor);
-  };
+  console.log('Generated setCounter');
 
-  const decrement = () => {
-    setState(counter - factor);
-  };
+  //change factor in useSetInputValue,
 
-  const reset = () => {
-    setState(initialState);
-  };
+  const increment = useCallback((factor) => {
+    setCounter(c => c + factor);
+  },
+    [setCounter],
+  );
+
+  const decrement = useCallback((factor) => {
+      setCounter(c => c - factor);
+  }, [setCounter]);
+
+  const reset = useCallback((initialState) => {
+    setCounter(initialState);
+  },[setCounter]);
 
   return {
     counter,
     increment,
     decrement,
     reset,
-    factor,
-    changeFactor,
-    onChangeInputValue,
   };
 };
 
 useCounter.propTypes = {
   initialState: PropTypes.number,
-  factorIncrement: PropTypes.number,
 };
 
 export default useCounter;
